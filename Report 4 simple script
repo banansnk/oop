@@ -1,0 +1,29 @@
+import random
+
+guesses_made = 0
+
+name = input('Lets start a game! What is your name?\n')
+
+number = random.randint(1, 10)
+
+print (('Well, {0}, I am thinking of a number between 1 and 10.').format(name))
+
+while guesses_made < 3:
+
+    guess = int(input('You have three chances, Take a guess: '))
+
+    guesses_made += 1
+
+    if guess < number:
+        print ('Your guess is too low.')
+
+    if guess > number:
+        print ('Your guess is too high.')
+
+    if guess == number:
+        break
+
+if guess == number:
+    print (('YOU WIN {0}!  After {1} guesses!').format(name, guesses_made))
+else:
+    print (('YOU LOSE!. It was {0}').format(number))
